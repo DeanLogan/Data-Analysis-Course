@@ -197,3 +197,51 @@ print(s.fillna(method='bfill'))
 
 print(pd.Series([np.nan, 3, np.nan, 9]).fillna(method='ffill'))
 print(pd.Series([1, np.nan, 3, np.nan, np.nan]).fillna(method='bfill'))
+
+# Filling null values on DataFrames
+# The fillna method also works on DataFrames, and it works similarly. The main differences are that you can specify the axis (as usual, rows or columns) to use to fill the values (especially for methods) and that you have more control on the values passed:
+
+print(df)
+print(df.fillna({'Column A': 0, 'Column B': 99, 'Column C': df['Column C'].mean()}))
+print(df.fillna(method='ffill', axis=0))
+print(df.fillna(method='ffill', axis=1))
+
+# Checking if there are NAs
+# The question is: Does this Series or DataFrame contain any missing value? The answer should be yes or no: True or False. How can you verify it?
+
+# Example 1: Checking the length
+# If there are missing values, s.dropna() will have fewer elements than s:
+
+print(s.dropna().count())
+missing_values = len(s.dropna()) != len(s)
+print(missing_values)
+
+# There's also a count method, that excludes nans from its result:
+
+print(len(s))
+print(s.count())
+# So we could just do:
+
+missing_values = s.count() != len(s)
+print(missing_values)
+
+# More Pythonic solution: any
+# The methods any and all check if either there's any True value in a Series or all the values are True. They work in the same way as in Python:
+
+print(pd.Series([True, False, False]).any())
+print(pd.Series([True, False, False]).all())
+print(pd.Series([True, True, True]).all())
+
+# The isnull() method returned a Boolean Series with True values wherever there was a nan:
+
+print(s.isnull())
+# So we can just use the any method with the boolean array returned:
+
+print(pd.Series([1, np.nan]).isnull().any())
+print(pd.Series([1, 2]).isnull().any())
+print(s.isnull().any())
+
+# A more strict version would check only the values of the Series:
+
+print(s.isnull().values)
+print(s.isnull().values.any())
