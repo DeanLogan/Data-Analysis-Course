@@ -107,4 +107,3 @@ print(df['Country'].str.contains('U'),  '\n') # contains takes a regex/pattern a
 
 print(df['Country'].str.strip(),  '\n') # Removing blank spaces (like in 'US ' or 'I  T' can be achieved with strip (lstrip and rstrip also exist) 
 print(df['Country'].str.replace(' ', ''),  '\n') # Or just replace
-
