@@ -1,9 +1,8 @@
-import pandas as pd
 import os
+import pandas as pd
 
-
-script_dir = os.path.dirname(os.path.abspath(__file__)) # Get the directory of the current script
-filepath = os.path.join(script_dir, 'files', 'btc-market-price.csv') # Construct the absolute file path
+absolute_path = os.path.dirname(os.path.abspath(__file__)) # Get the directory of the current script
+filepath = os.path.join(absolute_path, 'files', 'btc-market-price.csv') # Construct the absolute file path
 
 with open(filepath, 'r') as reader:
     print(reader)
