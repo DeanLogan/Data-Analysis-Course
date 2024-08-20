@@ -40,7 +40,7 @@ with open(filepath, 'r') as reader:
 csv_url = "https://raw.githubusercontent.com/datasets/gdp/master/data/gdp.csv"
 print(pd.read_csv(csv_url).head())
 
-df = pd.read_csv(os.path.join(script_dir, 'files', 'btc-market-price.csv'))
+df = pd.read_csv(os.path.join(absolute_path, 'files', 'btc-market-price.csv'))
 print(df.head())
 
 # Missing values with na_values parameter
