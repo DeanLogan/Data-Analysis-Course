@@ -2,4 +2,5 @@ lxml
 numpy
 scipy
 pandas
+seaborn
 matplotlib
