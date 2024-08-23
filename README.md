@@ -10,6 +10,7 @@ The following folders contain projects that were made in order to gain the certi
 - **demographic-data-analyser**: Contains a project that analyses demographic data from the [1994 Census database](https://archive.ics.uci.edu/dataset/117/census+income+kdd) using Pandas to answer various statistical questions about the dataset, such as the distribution of races, average age of men, education levels, and income statistics.
 - **medical-data-visualizer**: Contains a project that analyses example medical data using Pandas to visualize differences between patients with and without cardiovascular disease and to visualize the correlations between all the different elements recorded during medical visits.
 - **page-view-time-series-visualizer**: Contains a project that visualises time series data using a line chart, bar chart, and box plots to help understand the patterns in visits and identify yearly and monthly growth.
+- **sea-level-predictor**: Contains a project that predicts the rise of sea levels based on the [Global Average Absolute Sea Level Change, 1880-2014 from the US Environmental Protection Agency](https://datahub.io/core/sea-level-rise) using linear regression. It predicts the rise based on data from 1880 then limits the predictions data from 2000 onwards due to the sharp increase during these years, then plots both of these on a scatter plot graph. 
 
 For each project above run the main.py file in the respective folder to run the test cases for the projects.
 
